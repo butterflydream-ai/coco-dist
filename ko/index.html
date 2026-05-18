@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko" class="dark">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,8 +11,8 @@
 <link rel="alternate" hreflang="ja" href="https://coco.butterflydream.ai/ja/">
 <link rel="alternate" hreflang="ko" href="https://coco.butterflydream.ai/ko/">
 <link rel="alternate" hreflang="x-default" href="https://coco.butterflydream.ai/">
-<meta name="theme-color" content="#0a0d0c">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#f1ede3">
+<meta name="color-scheme" content="light">
 <link rel="icon" type="image/png" href="/icon.png">
 <link rel="apple-touch-icon" href="/icon.png">
 <meta property="og:type" content="website">
@@ -33,176 +33,228 @@
 <meta name="twitter:site" content="@yan_ai_labs">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Coco", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 14 or later, Apple Silicon", "description": "Coco는 빠른 네이티브 macOS 런처입니다. 단축키 하나로 앱 실행, 클립보드 기록, 계산, 단위·환율 변환, 이모지, 플러그인. 약 2 MB, Swift + AppKit, 무료, 무음 자동 업데이트. macOS 14+ Apple 실리콘.", "url": "https://coco.butterflydream.ai/", "downloadUrl": "https://coco.butterflydream.ai/Coco-macos.dmg", "softwareVersion": "1.3.0", "fileSize": "2MB", "screenshot": "https://coco.butterflydream.ai/shot-launcher.jpg", "inLanguage": "ko", "author": {"@type": "Person", "name": "YAN", "url": "https://x.com/yan_ai_labs"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "FAQPage", "inLanguage": "ko", "mainEntity": [{"@type": "Question", "name": "Coco는 무료인가요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 무료로 받아 쓰며, 자동으로 최신 상태를 유지합니다."}}, {"@type": "Question", "name": "시스템 요구 사항은?", "acceptedAnswer": {"@type": "Answer", "text": "macOS 14(Sonoma) 이상, Apple 실리콘. 다운로드는 약 2 MB."}}, {"@type": "Question", "name": "어떻게 설치하나요?", "acceptedAnswer": {"@type": "Answer", "text": "DMG를 받아 Coco를 응용 프로그램으로 끌어다 놓고, 처음엔 우클릭→열기(ad-hoc 서명이라 한 번 확인). ⌥Space로 호출."}}, {"@type": "Question", "name": "자동 업데이트되나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 백그라운드에서 확인하고 서명된 피드로 Sparkle을 통해 조용히 설치합니다."}}, {"@type": "Question", "name": "지원 언어는?", "acceptedAnswer": {"@type": "Answer", "text": "영·중·일·한, 시스템에 따라가며 병음/로마자/한글 초성 검색 지원."}}]}]}</script>
 <style>
-  :root{color-scheme:dark} html,body{background:#0a0d0c}
-  body{opacity:0;transition:opacity .25s ease} body.ready{opacity:1}
+  html,body{background:#f1ede3}
+  body{opacity:0;transition:opacity .3s ease} body.ready{opacity:1}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
-  ::selection{background:rgba(99,212,164,.28)}
-  details>summary{list-style:none} details>summary::-webkit-details-marker{display:none}
+  ::selection{background:#2440301f}
+  details>summary::-webkit-details-marker{display:none}
   details[open] .chev{transform:rotate(45deg)}
-  .halo{background:radial-gradient(60% 100% at 50% 0,rgba(99,212,164,.20),transparent 70%)}
-  .titlegrad{background:linear-gradient(180deg,#fff,#b7c6bd);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grain{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.5'/></svg>");background-size:160px;mix-blend-mode:multiply;opacity:.05}
+  .rule::before{content:"";display:inline-block;width:26px;height:1px;background:#1721284d;vertical-align:middle;margin-right:12px}
+  .shadow-print{box-shadow:0 1px 2px rgba(20,30,24,.06),0 30px 60px -28px rgba(20,30,24,.42)}
 </style>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config={darkMode:'class',theme:{extend:{
- colors:{ink:'#0a0d0c',panel:'#0e1311',panel2:'#121916',mint:'#63d4a4',minthi:'#7fe6bb',line:'rgba(255,255,255,.09)',line2:'rgba(255,255,255,.16)'},
- fontFamily:{sans:['Inter','-apple-system','BlinkMacSystemFont','Segoe UI','sans-serif']},
- boxShadow:{soft:'0 1px 0 rgba(255,255,255,.04) inset,0 24px 60px -24px rgba(0,0,0,.7)',cta:'0 1px 0 rgba(255,255,255,.35) inset,0 12px 26px -12px rgba(99,212,164,.7)'},
- maxWidth:{site:'72rem'}}}}
+tailwind.config={theme:{extend:{
+ colors:{paper:'#f1ede3',paper2:'#fbf9f2',card:'#ffffff',ink:'#18211c',sub:'#5c6b60',
+  line:'rgba(24,33,28,.14)',pond:'#24402f',pondhi:'#2d5038',rose:'#bd5f7d'},
+ fontFamily:{display:['Fraunces','Georgia','serif'],sans:['Inter','-apple-system','BlinkMacSystemFont','Segoe UI','sans-serif']},
+ maxWidth:{site:'70rem'}}}}
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans text-[15px] leading-relaxed text-[#e9efea] antialiased">
-<div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(900px_520px_at_50%_-8%,rgba(99,212,164,.10),transparent_60%),radial-gradient(700px_400px_at_92%_8%,rgba(70,140,170,.07),transparent_60%)]"></div>
+<body class="font-sans text-[15px] leading-relaxed text-ink antialiased">
+<div class="grain pointer-events-none fixed inset-0 z-[60]"></div>
+<div class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[560px] bg-[radial-gradient(700px_360px_at_50%_-6%,rgba(189,95,125,.12),transparent_62%),radial-gradient(680px_360px_at_88%_4%,rgba(36,64,47,.10),transparent_60%)]"></div>
 
-<header class="sticky top-0 z-50 border-b border-line bg-ink/70 backdrop-blur-xl backdrop-saturate-150">
-  <nav class="mx-auto flex h-16 max-w-site items-center gap-4 px-6">
-    <a href="/ko/" class="flex items-center gap-2.5 font-semibold tracking-tight"><img src="/icon.png" alt="" width="26" height="26" class="h-[26px] w-[26px] rounded-md">Coco</a>
+<header class="sticky top-0 z-50 border-b border-line/70 bg-paper/80 backdrop-blur-md">
+  <nav class="mx-auto flex h-[60px] max-w-site items-center gap-5 px-6">
+    <a href="/ko/" class="flex items-center gap-2.5">
+      <img src="/icon.png" alt="" width="24" height="24" class="h-6 w-6 rounded-[7px] ring-1 ring-ink/10">
+      <span class="font-display text-[19px] font-semibold tracking-[-.02em]">Coco</span>
+    </a>
     <span class="flex-1"></span>
-    <a href="#features" class="hidden rounded-lg px-3 py-2 text-sm text-white/60 transition hover:bg-white/5 hover:text-white sm:block">기능</a>
-    <a href="#faq" class="hidden rounded-lg px-3 py-2 text-sm text-white/60 transition hover:bg-white/5 hover:text-white sm:block">FAQ</a>
-    <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="rounded-lg px-3 py-2 text-sm text-white/60 transition hover:bg-white/5 hover:text-white">GitHub</a>
-    <div class="flex items-center gap-0.5 text-[13px]"><a href="/" hreflang="en" class="rounded-md px-2 py-1 text-white/45 hover:text-white">EN</a> <a href="/zh/" hreflang="zh-Hans" class="rounded-md px-2 py-1 text-white/45 hover:text-white">中文</a> <a href="/ja/" hreflang="ja" class="rounded-md px-2 py-1 text-white/45 hover:text-white">日本語</a> <a href="/ko/" hreflang="ko" class="rounded-md px-2 py-1 text-mint font-semibold">한국어</a></div>
-    <a href="/Coco-macos.dmg" download class="rounded-xl bg-mint px-4 py-2.5 text-sm font-semibold text-ink shadow-cta transition will-change-transform hover:-translate-y-px hover:bg-minthi active:translate-y-0">다운로드</a>
+    <a href="#features" class="hidden text-[14px] text-ink/55 transition-colors hover:text-ink sm:block">기능</a>
+    <a href="#faq" class="hidden text-[14px] text-ink/55 transition-colors hover:text-ink sm:block">FAQ</a>
+    <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="hidden text-[14px] text-ink/55 transition-colors hover:text-ink sm:block">GitHub</a>
+    <span class="hidden h-4 w-px bg-line sm:block"></span>
+    <div class="flex items-center text-[13px]"><a href="/" hreflang="en" class="px-1.5 text-ink/45 hover:text-ink transition-colors">EN</a><span class='text-ink/25'>·</span><a href="/zh/" hreflang="zh-Hans" class="px-1.5 text-ink/45 hover:text-ink transition-colors">中文</a><span class='text-ink/25'>·</span><a href="/ja/" hreflang="ja" class="px-1.5 text-ink/45 hover:text-ink transition-colors">日本語</a><span class='text-ink/25'>·</span><a href="/ko/" hreflang="ko" class="px-1.5 text-ink font-medium transition-colors">한국어</a></div>
+    <a href="/Coco-macos.dmg" download class="rounded-full bg-pond px-4 py-2 text-[13.5px] font-medium text-paper2 shadow-sm transition will-change-transform hover:-translate-y-px hover:bg-pondhi active:translate-y-0">다운로드</a>
   </nav>
 </header>
 
 <main class="mx-auto max-w-site px-6">
-  <section class="pt-24 pb-10 text-center sm:pt-28">
-    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-mint">네이티브 macOS 런처</p>
-    <h1 class="titlegrad mx-auto mt-5 max-w-3xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">단축키 하나로,<br>모든 것이 손안에.</h1>
-    <p class="mx-auto mt-6 max-w-xl text-base text-white/65 sm:text-lg">Coco는 메뉴 막대에 숨어 ⌥Space를 누르기 전까진 방해하지 않아요. 누르면 바로——앱 실행, 클립보드 기록, 계산, 환율 변환, 이모지.</p>
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
-      <a href="/Coco-macos.dmg" download class="rounded-xl bg-mint px-6 py-3.5 text-[15px] font-semibold text-ink shadow-cta transition will-change-transform hover:-translate-y-px hover:bg-minthi active:translate-y-0">⬇  macOS용 다운로드</a>
-      <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="rounded-xl border border-line2 px-6 py-3.5 text-[15px] font-semibold text-white transition hover:border-white/30 hover:bg-white/5">GitHub에서 보기</a>
+
+  <section class="pt-24 pb-12 text-center sm:pt-32">
+    <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">네이티브 macOS 런처</p>
+    <h1 class="mx-auto mt-7 max-w-4xl font-display text-[clamp(2.6rem,6.6vw,5rem)] font-semibold leading-[1.04] tracking-[-.025em] text-ink">단축키 하나로,<br>모든 것이 손안에.</h1>
+    <p class="mx-auto mt-6 max-w-[34rem] text-[17px] leading-relaxed text-sub">Coco는 메뉴 막대에 숨어 ⌥Space를 누르기 전까진 방해하지 않아요. 누르면 바로——앱 실행, 클립보드 기록, 계산, 환율 변환, 이모지.</p>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+      <a href="/Coco-macos.dmg" download class="rounded-full bg-pond px-7 py-3.5 text-[15px] font-medium text-paper2 shadow-print transition will-change-transform hover:-translate-y-0.5 hover:bg-pondhi active:translate-y-0">⬇  macOS용 다운로드</a>
+      <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="group inline-flex items-center gap-1.5 text-[15px] font-medium text-ink/70 transition-colors hover:text-ink">GitHub에서 보기<span class="transition-transform group-hover:translate-x-0.5">→</span></a>
     </div>
-    <p class="mt-4 text-[13px] text-white/45"><span class="font-semibold text-white/65">무료</span> · macOS 14+ · Apple 실리콘 · 약 2 MB · 무음 자동 업데이트</p>
-    <div class="relative mx-auto mt-16 max-w-4xl">
-      <div class="halo absolute inset-x-0 -top-8 -z-10 h-3/5 blur-2xl"></div>
-      <img src="/shot-launcher.jpg" width="1600" height="1000" fetchpriority="high" alt="The Coco launcher panel open over a macOS desktop" class="w-full rounded-2xl border border-line2 bg-panel shadow-soft">
-    </div>
-  </section>
+    <p class="mt-5 text-[13px] text-ink/40"><span class="font-medium text-ink/60">무료</span> · macOS 14+ · Apple 실리콘 · 약 2 MB · 무음 자동 업데이트</p>
 
-  <section id="features" class="scroll-mt-20 py-20">
-    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-mint">하는 일</p>
-    <h2 class="mt-3 max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">작은 창 하나가 꽤 많은 일을</h2>
-    <p class="mt-3 max-w-xl text-white/60">Electron 없음, 군더더기 없음. Swift + AppKit, 약 2메가, 즉시 호출.</p>
-    <div class="mt-11 grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="search" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">앱 런처</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">병음·로마자·한글 초성 매칭의 퍼지 검색과 앱별 동작.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="clipboard-list" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">클립보드 기록</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">기록과 즐겨찾기 검색. 스페이스로 미리보기, 있던 곳으로 바로 붙여넣기.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="calculator" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">계산기</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">식을 입력하면 그 자리에서 답. 모드 전환도 앱 실행도 없이.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="arrow-left-right" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">단위와 환율</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">단위 변환, 환율은 실시간. 금액을 치면 어디서나 표시.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="smile" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">이모지와 웹</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">이름으로 이모지 찾기, 또는 검색엔진으로 바로 전달.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="terminal" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">셸 별칭</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">내 명령을 별칭으로 묶어 바에서 실행. 터미널 필요 없음.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="puzzle" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">플러그인과 스토어</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">내장 Coco Store에서 JavaScript 플러그인을 설치.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="languages" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">4개 언어</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">영·중·일·한, 시스템에 따라가며 네이티브 발음 검색.</p>
-      </div>
-
-      <div class="group rounded-2xl border border-line bg-gradient-to-b from-panel2 to-panel p-5 transition will-change-transform hover:-translate-y-0.5 hover:border-line2">
-        <div class="mb-3.5 grid h-9 w-9 place-items-center rounded-[10px] bg-mint/10 text-mint"><i data-lucide="arrow-down-to-line" class="h-[18px] w-[18px]"></i></div>
-        <h3 class="text-[15px] font-semibold tracking-tight">무음 업데이트</h3>
-        <p class="mt-1.5 text-sm leading-relaxed text-white/60">새 버전이 백그라운드에서 알아서 받고 설치. 따라다닐 필요 없음.</p>
+    <div class="mx-auto mt-16 max-w-4xl">
+      <div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10">
+        <img src="/shot-launcher.jpg" width="1600" height="1000" fetchpriority="high" alt="The Coco launcher panel open over a macOS desktop, showing app results" class="w-full rounded-xl ring-1 ring-ink/10">
       </div>
     </div>
   </section>
 
-  <section class="py-20">
-    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-mint">실제 동작</p>
-    <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">다 치기 전에 답이 나와요</h2>
-    <div class="mt-9 grid grid-cols-1 gap-4 md:grid-cols-2">
-      <figure class="m-0"><img src="/shot-currency.jpg" width="1600" height="1000" loading="lazy" alt="Live currency conversion in Coco" class="w-full rounded-xl border border-line2 bg-panel shadow-soft"><figcaption class="mt-3 text-sm text-white/60"><b class="font-semibold text-white">실시간 환율.</b> 금액을 치면 환율이 즉시 나옵니다.</figcaption></figure>
-      <figure class="m-0"><img src="/shot-calc.jpg" width="1600" height="1000" loading="lazy" alt="Inline calculator in Coco" class="w-full rounded-xl border border-line2 bg-panel shadow-soft"><figcaption class="mt-3 text-sm text-white/60"><b class="font-semibold text-white">인라인 계산.</b> 어떤 식이든 같은 줄에서 답.</figcaption></figure>
+  <section id="features" class="scroll-mt-20 border-t border-line py-24">
+    <div class="max-w-xl">
+      <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">하는 일</p>
+      <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">작은 창 하나가 꽤 많은 일을</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-sub">Electron 없음, 군더더기 없음. Swift + AppKit, 약 2메가, 즉시 호출.</p>
+    </div>
+    <div class="mt-16 grid grid-cols-1 gap-x-14 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="search" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">앱 런처</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">병음·로마자·한글 초성 매칭의 퍼지 검색과 앱별 동작.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="clipboard" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">클립보드 기록</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">기록과 즐겨찾기 검색. 스페이스로 미리보기, 있던 곳으로 바로 붙여넣기.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="hash" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">계산기</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">식을 입력하면 그 자리에서 답. 모드 전환도 앱 실행도 없이.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="repeat" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">단위와 환율</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">단위 변환, 환율은 실시간. 금액을 치면 어디서나 표시.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="smile" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">이모지와 웹</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">이름으로 이모지 찾기, 또는 검색엔진으로 바로 전달.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="chevron-right" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">셸 별칭</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">내 명령을 별칭으로 묶어 바에서 실행. 터미널 필요 없음.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="blocks" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">플러그인과 스토어</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">내장 Coco Store에서 JavaScript 플러그인을 설치.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="globe" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">4개 언어</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">영·중·일·한, 시스템에 따라가며 네이티브 발음 검색.</p>
+      </div>
+
+      <div class="group">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="download" class="h-[17px] w-[17px] text-pond/70"></i>
+          <h3 class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">무음 업데이트</h3>
+        </div>
+        <p class="mt-2 text-[14.5px] leading-relaxed text-sub">새 버전이 백그라운드에서 알아서 받고 설치. 따라다닐 필요 없음.</p>
+      </div>
     </div>
   </section>
 
-  <section id="faq" class="scroll-mt-20 py-20">
-    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-mint">알아두면</p>
-    <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">자주 묻는 질문</h2>
-    <div class="mt-9 grid max-w-3xl gap-2.5">
-      <details class="rounded-xl border border-line bg-panel px-5 open:border-line2" open>
-        <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium">
-          <span>Coco는 무료인가요?</span><span class="chev text-lg font-semibold text-mint transition-transform">+</span>
+  <section class="border-t border-line py-24">
+    <div class="max-w-xl">
+      <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">실제 동작</p>
+      <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">다 치기 전에 답이 나와요</h2>
+    </div>
+    <div class="mt-14 grid grid-cols-1 gap-7 md:grid-cols-2">
+      <figure class="m-0">
+        <div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10"><img src="/shot-currency.jpg" width="1600" height="1000" loading="lazy" alt="Typing $100 in Coco shows live conversions" class="w-full rounded-xl ring-1 ring-ink/10"></div>
+        <figcaption class="mt-4 text-[14.5px] text-sub"><b class="font-display font-semibold text-ink">실시간 환율.</b> 금액을 치면 환율이 즉시 나옵니다.</figcaption>
+      </figure>
+      <figure class="m-0">
+        <div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10"><img src="/shot-calc.jpg" width="1600" height="1000" loading="lazy" alt="Typing 2026-1999 in Coco shows the result inline" class="w-full rounded-xl ring-1 ring-ink/10"></div>
+        <figcaption class="mt-4 text-[14.5px] text-sub"><b class="font-display font-semibold text-ink">인라인 계산.</b> 어떤 식이든 같은 줄에서 답.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="faq" class="scroll-mt-20 border-t border-line py-24">
+    <div class="grid gap-x-16 gap-y-10 md:grid-cols-[20rem_1fr]">
+      <div>
+        <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">알아두면</p>
+        <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">자주 묻는 질문</h2>
+      </div>
+      <div class="border-t border-line">
+      <details class="border-b border-line py-1" open>
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4">
+          <span class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">Coco는 무료인가요?</span>
+          <span class="chev shrink-0 text-pond/60 transition-transform duration-200">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3v10M3 8h10"/></svg></span>
         </summary>
-        <p class="pb-4 text-[15px] text-white/60">네. 무료로 받아 쓰며, 자동으로 최신 상태를 유지합니다.</p>
+        <p class="max-w-2xl pb-5 text-[15px] leading-relaxed text-sub">네. 무료로 받아 쓰며, 자동으로 최신 상태를 유지합니다.</p>
       </details>
 
-      <details class="rounded-xl border border-line bg-panel px-5 open:border-line2">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium">
-          <span>시스템 요구 사항은?</span><span class="chev text-lg font-semibold text-mint transition-transform">+</span>
+      <details class="border-b border-line py-1">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4">
+          <span class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">시스템 요구 사항은?</span>
+          <span class="chev shrink-0 text-pond/60 transition-transform duration-200">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3v10M3 8h10"/></svg></span>
         </summary>
-        <p class="pb-4 text-[15px] text-white/60">macOS 14(Sonoma) 이상, Apple 실리콘. 다운로드는 약 2 MB.</p>
+        <p class="max-w-2xl pb-5 text-[15px] leading-relaxed text-sub">macOS 14(Sonoma) 이상, Apple 실리콘. 다운로드는 약 2 MB.</p>
       </details>
 
-      <details class="rounded-xl border border-line bg-panel px-5 open:border-line2">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium">
-          <span>어떻게 설치하나요?</span><span class="chev text-lg font-semibold text-mint transition-transform">+</span>
+      <details class="border-b border-line py-1">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4">
+          <span class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">어떻게 설치하나요?</span>
+          <span class="chev shrink-0 text-pond/60 transition-transform duration-200">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3v10M3 8h10"/></svg></span>
         </summary>
-        <p class="pb-4 text-[15px] text-white/60">DMG를 받아 Coco를 응용 프로그램으로 끌어다 놓고, 처음엔 우클릭→열기(ad-hoc 서명이라 한 번 확인). ⌥Space로 호출.</p>
+        <p class="max-w-2xl pb-5 text-[15px] leading-relaxed text-sub">DMG를 받아 Coco를 응용 프로그램으로 끌어다 놓고, 처음엔 우클릭→열기(ad-hoc 서명이라 한 번 확인). ⌥Space로 호출.</p>
       </details>
 
-      <details class="rounded-xl border border-line bg-panel px-5 open:border-line2">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium">
-          <span>자동 업데이트되나요?</span><span class="chev text-lg font-semibold text-mint transition-transform">+</span>
+      <details class="border-b border-line py-1">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4">
+          <span class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">자동 업데이트되나요?</span>
+          <span class="chev shrink-0 text-pond/60 transition-transform duration-200">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3v10M3 8h10"/></svg></span>
         </summary>
-        <p class="pb-4 text-[15px] text-white/60">네. 백그라운드에서 확인하고 서명된 피드로 Sparkle을 통해 조용히 설치합니다.</p>
+        <p class="max-w-2xl pb-5 text-[15px] leading-relaxed text-sub">네. 백그라운드에서 확인하고 서명된 피드로 Sparkle을 통해 조용히 설치합니다.</p>
       </details>
 
-      <details class="rounded-xl border border-line bg-panel px-5 open:border-line2">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 py-4 font-medium">
-          <span>지원 언어는?</span><span class="chev text-lg font-semibold text-mint transition-transform">+</span>
+      <details class="border-b border-line py-1">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-4">
+          <span class="font-display text-[19px] font-semibold tracking-[-.01em] text-ink">지원 언어는?</span>
+          <span class="chev shrink-0 text-pond/60 transition-transform duration-200">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3v10M3 8h10"/></svg></span>
         </summary>
-        <p class="pb-4 text-[15px] text-white/60">영·중·일·한, 시스템에 따라가며 병음/로마자/한글 초성 검색 지원.</p>
+        <p class="max-w-2xl pb-5 text-[15px] leading-relaxed text-sub">영·중·일·한, 시스템에 따라가며 병음/로마자/한글 초성 검색 지원.</p>
       </details>
+      </div>
     </div>
   </section>
 </main>
 
-<footer class="border-t border-line py-12">
-  <div class="mx-auto flex max-w-site flex-wrap items-center gap-5 px-6 text-sm text-white/45">
-    <a href="/ko/" class="flex items-center gap-2 text-white/60"><img src="/icon.png" alt="" width="20" height="20" class="h-5 w-5 rounded"> Coco</a>
+<footer class="border-t border-line py-10">
+  <div class="mx-auto flex max-w-site flex-wrap items-center gap-x-6 gap-y-3 px-6 text-[13.5px] text-ink/45">
+    <span class="font-display font-semibold text-ink/70">Coco</span>
+    <span class="h-1 w-1 rounded-full bg-rose"></span>
     <span class="flex-1"></span>
-    <a href="/Coco-macos.dmg" download class="transition hover:text-white">다운로드</a>
-    <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="transition hover:text-white">GitHub</a>
-    <a href="https://x.com/yan_ai_labs" rel="noopener" class="transition hover:text-white">YAN 제작</a>
+    <a href="/Coco-macos.dmg" download class="transition-colors hover:text-ink">다운로드</a>
+    <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="transition-colors hover:text-ink">GitHub</a>
+    <a href="https://x.com/yan_ai_labs" rel="noopener" class="transition-colors hover:text-ink">YAN 제작</a>
   </div>
 </footer>
 <script src="https://unpkg.com/lucide@latest"></script>
