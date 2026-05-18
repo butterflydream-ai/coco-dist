@@ -7,7 +7,7 @@
 <p align="center">A fast, native macOS launcher. One hotkey for apps, clipboard, math, and more.</p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fbutterflydream-ai.github.io%2Fcoco-app%2Fappcast.xml&query=%2F%2F%2A%5Blocal-name()%3D%27shortVersionString%27%5D%5B1%5D&prefix=v&label=Coco&color=2e7d32">
+  <img alt="Version" src="https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fcoco.butterflydream.ai%2Fappcast.xml&query=%2F%2F%2A%5Blocal-name()%3D%27shortVersionString%27%5D%5B1%5D&prefix=v&label=Coco&color=2e7d32">
   <img alt="Platform" src="https://img.shields.io/badge/macOS%2014%2B-Apple%20Silicon-2e7d32">
   <img alt="Auto-update" src="https://img.shields.io/badge/auto--update-Sparkle-2e7d32">
 </p>
