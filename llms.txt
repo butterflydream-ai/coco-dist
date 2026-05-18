@@ -29,7 +29,10 @@
 4. Press ⌥Space
 
 ## Links
-- Home: https://coco.butterflydream.ai/
+- Home (English): https://coco.butterflydream.ai/
+- 中文: https://coco.butterflydream.ai/zh/
+- 日本語: https://coco.butterflydream.ai/ja/
+- 한국어: https://coco.butterflydream.ai/ko/
 - Download (DMG): https://coco.butterflydream.ai/Coco-macos.dmg
 - Download (zip): https://coco.butterflydream.ai/Coco-macos.zip
 - Source/portal: https://github.com/butterflydream-ai/coco-app
