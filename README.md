@@ -20,6 +20,10 @@
 
 ---
 
+<p align="center">
+  <img src="shot-launcher.jpg" width="780" alt="Coco launcher">
+</p>
+
 Coco lives in your menu bar and stays out of the way until you press **⌥Space**. Then it's right there: launch an app, paste from clipboard history, do quick math, convert units or currency, drop an emoji, run a saved command.
 
 Written in Swift + AppKit. Around 2&nbsp;MB, instant to summon, no Electron.
@@ -34,6 +38,16 @@ Written in Swift + AppKit. Around 2&nbsp;MB, instant to summon, no Electron.
 - **Plugins & Coco Store** — browse and install JS plugins in-app.
 - **Four languages** — English, 简体中文, 日本語, 한국어, following your system.
 - **Silent auto-update** — new versions download and install themselves.
+
+## In action
+
+<p align="center">
+  <img src="shot-currency.jpg" width="420" alt="Type $100, get live conversions">
+  &nbsp;
+  <img src="shot-calc.jpg" width="420" alt="Inline calculator">
+</p>
+
+<p align="center"><sub>Type an amount for live currency rates, or any expression for a quick answer.</sub></p>
 
 ## Install
 
