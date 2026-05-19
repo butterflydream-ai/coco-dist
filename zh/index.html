@@ -21,7 +21,7 @@
 <meta property="og:title" content="Coco — 快速的原生 macOS 启动器">
 <meta property="og:description" content="Coco 是一款快速的原生 macOS 启动器：一个快捷键搞定应用启动、剪贴板历史、计算、单位与汇率换算、Emoji、插件。约 2 MB，Swift + AppKit，免费，静默自动更新。需 macOS 14+ Apple 芯片。">
 <meta property="og:url" content="https://coco.butterflydream.ai/zh/">
-<meta property="og:image" content="https://coco.butterflydream.ai/shot-launcher.jpg">
+<meta property="og:image" content="https://coco.butterflydream.ai/coco-hero-illustration.jpg">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Coco — 快速的原生 macOS 启动器">
 <meta name="twitter:description" content="Coco 是一款快速的原生 macOS 启动器：一个快捷键搞定应用启动、剪贴板历史、计算、单位与汇率换算、Emoji、插件。约 2 MB，Swift + AppKit，免费，静默自动更新。需 macOS 14+ Apple 芯片。">
-<meta name="twitter:image" content="https://coco.butterflydream.ai/shot-launcher.jpg">
+<meta name="twitter:image" content="https://coco.butterflydream.ai/coco-hero-illustration.jpg">
 <meta name="twitter:site" content="@yan_ai_labs">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Coco", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 14 or later, Apple Silicon", "description": "Coco 是一款快速的原生 macOS 启动器：一个快捷键搞定应用启动、剪贴板历史、计算、单位与汇率换算、Emoji、插件。约 2 MB，Swift + AppKit，免费，静默自动更新。需 macOS 14+ Apple 芯片。", "url": "https://coco.butterflydream.ai/", "downloadUrl": "https://coco.butterflydream.ai/Coco-macos.dmg", "softwareVersion": "1.3.0", "fileSize": "2MB", "screenshot": "https://coco.butterflydream.ai/shot-launcher.jpg", "inLanguage": "zh-Hans", "author": {"@type": "Person", "name": "YAN", "url": "https://x.com/yan_ai_labs"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "FAQPage", "inLanguage": "zh-Hans", "mainEntity": [{"@type": "Question", "name": "能一行把不同货币加起来吗？", "acceptedAnswer": {"@type": "Answer", "text": "能。打一行 $100 + ¥800 + €20，Coco 按实时汇率逐项加总，在你盯着的每种货币里列出来，各自带走势。"}}, {"@type": "Question", "name": "计算器只给一个答案？", "acceptedAnswer": {"@type": "Answer", "text": "不是。它边打边出结果，还留一条计算纸带；上一个答案接着下一行，跟台式计算器一样。"}}, {"@type": "Question", "name": "名字打不准，也能找到 App 吗？", "acceptedAnswer": {"@type": "Answer", "text": "能。模糊搜索，还认拼音、罗马音和韩文初声，按脑子里的读音打就行。"}}, {"@type": "Question", "name": "它记得我复制过什么吗？", "acceptedAnswer": {"@type": "Answer", "text": "记得。能搜的剪贴板历史，还能收藏。空格预览，然后粘回你刚才那个窗口。"}}, {"@type": "Question", "name": "同一个框里还有什么？", "acceptedAnswer": {"@type": "Answer", "text": "单位换算、按名字找 emoji、快速网页搜索，还有你自己的 shell 别名——一个快捷键，什么都不用启动。"}}]}]}</script>
 <style>
@@ -42,6 +42,9 @@
   .grain{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.5'/></svg>");background-size:160px;mix-blend-mode:multiply;opacity:.05}
   .rule::before{content:"";display:inline-block;width:26px;height:1px;background:#1721284d;vertical-align:middle;margin-right:12px}
   .shadow-print{box-shadow:0 1px 2px rgba(20,30,24,.06),0 30px 60px -28px rgba(20,30,24,.42)}
+  .hero-bg{position:relative;background-image:linear-gradient(180deg,rgba(3,12,10,.18),rgba(3,12,10,.50)),url("/coco-hero-illustration.webp");background-position:center;background-size:cover}
+  .hero-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,12,10,.16),rgba(3,12,10,.56) 86%);pointer-events:none}
+  .hero-bg .rule::before{background:rgba(251,249,242,.58)}
   .prose p{margin-top:1rem;color:#5c6b60;font-size:16px;line-height:1.75}
   .prose p:first-child{margin-top:0}
   .rise{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
@@ -73,19 +76,20 @@ tailwind.config={theme:{extend:{
     <a href="/Coco-macos.dmg" download class="rounded-full bg-pond px-4 py-2 text-[13.5px] font-medium text-paper2 shadow-sm transition will-change-transform hover:-translate-y-px hover:bg-pondhi active:translate-y-0">下载</a>
   </nav>
 </header>
-<main class="mx-auto max-w-site px-6">
-  <section class="pt-24 pb-12 text-center sm:pt-32">
-    <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">原生 macOS 启动器</p>
-    <h1 class="mx-auto mt-7 max-w-4xl font-display text-[clamp(2.6rem,6.6vw,5rem)] font-semibold leading-[1.04] tracking-[-.025em] text-ink">一个快捷键，<br>整台 Mac 触手可及。</h1>
-    <p class="mx-auto mt-6 max-w-[34rem] text-[17px] leading-relaxed text-sub">它平时缩在菜单栏里，安静到你会忘了它在。按下 ⌥Space，它就在那儿：开应用、翻剪贴板、算个数、换汇率、找 emoji，全在同一个框里。</p>
+<main>
+  <section class="hero-bg min-h-[calc(100svh-76px)] text-center text-paper2">
+    <div class="relative z-10 mx-auto flex min-h-[calc(100svh-76px)] max-w-site flex-col items-center justify-center px-6 py-20 sm:py-24">
+    <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-paper2/70">原生 macOS 启动器</p>
+    <h1 class="mx-auto mt-7 max-w-4xl font-display text-[clamp(2.8rem,7vw,5.4rem)] font-semibold leading-[1.04] tracking-[-.025em] text-paper2">一个快捷键，<br>整台 Mac 触手可及。</h1>
+    <p class="mx-auto mt-6 max-w-[34rem] text-[17px] leading-relaxed text-paper2/75">它平时缩在菜单栏里，安静到你会忘了它在。按下 ⌥Space，它就在那儿：开应用、翻剪贴板、算个数、换汇率、找 emoji，全在同一个框里。</p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
-      <a href="/Coco-macos.dmg" download class="rounded-full bg-pond px-7 py-3.5 text-[15px] font-medium text-paper2 shadow-print transition will-change-transform hover:-translate-y-0.5 hover:bg-pondhi active:translate-y-0">⬇  下载 macOS 版</a>
-      <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="group inline-flex items-center gap-1.5 text-[15px] font-medium text-ink/70 transition-colors hover:text-ink">在 GitHub 查看<span class="transition-transform group-hover:translate-x-0.5">→</span></a>
+      <a href="/Coco-macos.dmg" download class="rounded-full bg-paper2 px-7 py-3.5 text-[15px] font-medium text-pond shadow-print transition will-change-transform hover:-translate-y-0.5 hover:bg-white active:translate-y-0">⬇  下载 macOS 版</a>
+      <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="group inline-flex items-center gap-1.5 text-[15px] font-medium text-paper2/75 transition-colors hover:text-paper2">在 GitHub 查看<span class="transition-transform group-hover:translate-x-0.5">→</span></a>
     </div>
-    <p class="mt-5 text-[13px] text-ink/40"><span class="font-medium text-ink/60">免费</span> · macOS 14+ · Apple 芯片 · 约 2 MB · 自己更新</p>
-    <div class="mx-auto mt-16 max-w-4xl"><div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10"><img src="/shot-launcher.webp" width="1600" height="1000" fetchpriority="high" alt="The Coco launcher panel open over a macOS desktop" class="w-full rounded-xl ring-1 ring-ink/10"></div></div>
+    <p class="mt-5 text-[13px] text-paper2/55"><span class="font-medium text-paper2/80">免费</span> · macOS 14+ · Apple 芯片 · 约 2 MB · 自己更新</p>
+    </div>
   </section>
-  <section id="features" class="scroll-mt-20 border-t border-line py-24">
+  <section id="features" class="mx-auto max-w-site scroll-mt-20 border-t border-line px-6 py-24">
     <div class="max-w-xl"><p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">它能做什么</p>
     <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">小小一个窗口，能干不少事</h2>
     <p class="mt-4 text-[16px] leading-relaxed text-sub">没有 Electron，不是套壳。原生 Swift + AppKit，约两兆，按下就开。「轻」这件事，我是当功能在做的。</p></div>
@@ -160,7 +164,7 @@ tailwind.config={theme:{extend:{
     </div>
     </div>
   </section>
-  <section class="border-t border-line py-24">
+  <section class="mx-auto max-w-site border-t border-line px-6 py-24">
     <div class="max-w-xl"><p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">实际效果</p>
     <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">还没打完，答案先到了</h2></div>
     <div class="mt-14 grid grid-cols-1 gap-7 md:grid-cols-2">
@@ -168,7 +172,7 @@ tailwind.config={theme:{extend:{
       <figure class="m-0"><div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10"><img src="/shot-calc.webp" width="1600" height="1000" loading="lazy" alt="Coco 计算器的计算纸带" class="w-full rounded-xl ring-1 ring-ink/10"></div><figcaption class="mt-4 text-[14.5px] text-sub"><b class="font-display font-semibold text-ink">真有纸带。</b> 每个答案都留着，随时再用——不是算完就没。</figcaption></figure>
     </div>
   </section>
-  <section id="faq" class="scroll-mt-20 border-t border-line py-24">
+  <section id="faq" class="mx-auto max-w-site scroll-mt-20 border-t border-line px-6 py-24">
     <div class="grid gap-x-16 gap-y-10 md:grid-cols-[20rem_1fr]">
       <div><p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">先了解下</p>
       <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">常见问题</h2></div>

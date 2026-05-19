@@ -21,7 +21,7 @@
 <meta property="og:title" content="Coco — 빠른 네이티브 macOS 런처">
 <meta property="og:description" content="Coco는 빠른 네이티브 macOS 런처입니다. 단축키 하나로 앱 실행, 클립보드 기록, 계산, 단위·환율 변환, 이모지, 플러그인. 약 2 MB, Swift + AppKit, 무료, 무음 자동 업데이트. macOS 14+ Apple 실리콘.">
 <meta property="og:url" content="https://coco.butterflydream.ai/ko/">
-<meta property="og:image" content="https://coco.butterflydream.ai/shot-launcher.jpg">
+<meta property="og:image" content="https://coco.butterflydream.ai/coco-hero-illustration.jpg">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="zh_CN">
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Coco — 빠른 네이티브 macOS 런처">
 <meta name="twitter:description" content="Coco는 빠른 네이티브 macOS 런처입니다. 단축키 하나로 앱 실행, 클립보드 기록, 계산, 단위·환율 변환, 이모지, 플러그인. 약 2 MB, Swift + AppKit, 무료, 무음 자동 업데이트. macOS 14+ Apple 실리콘.">
-<meta name="twitter:image" content="https://coco.butterflydream.ai/shot-launcher.jpg">
+<meta name="twitter:image" content="https://coco.butterflydream.ai/coco-hero-illustration.jpg">
 <meta name="twitter:site" content="@yan_ai_labs">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "Coco", "applicationCategory": "UtilitiesApplication", "operatingSystem": "macOS 14 or later, Apple Silicon", "description": "Coco는 빠른 네이티브 macOS 런처입니다. 단축키 하나로 앱 실행, 클립보드 기록, 계산, 단위·환율 변환, 이모지, 플러그인. 약 2 MB, Swift + AppKit, 무료, 무음 자동 업데이트. macOS 14+ Apple 실리콘.", "url": "https://coco.butterflydream.ai/", "downloadUrl": "https://coco.butterflydream.ai/Coco-macos.dmg", "softwareVersion": "1.3.0", "fileSize": "2MB", "screenshot": "https://coco.butterflydream.ai/shot-launcher.jpg", "inLanguage": "ko", "author": {"@type": "Person", "name": "YAN", "url": "https://x.com/yan_ai_labs"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "FAQPage", "inLanguage": "ko", "mainEntity": [{"@type": "Question", "name": "서로 다른 통화를 한 줄에 더할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. $100 + ¥800 + €20처럼 한 줄로 치면 Coco가 실시간 환율로 합산해, 보는 통화마다 추세와 함께 보여줘요."}}, {"@type": "Question", "name": "계산기는 답이 하나뿐인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 치는 대로 결과가 나오고 테이프에 기록이 남아요. 직전 답이 다음 줄로 이어져, 탁상 계산기처럼요."}}, {"@type": "Question", "name": "이름을 정확히 못 쳐도 앱을 찾나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 퍼지 검색에 더해 병음·로마자·한글 초성도 알아들어요. 떠오르는 발음대로 치면 돼요."}}, {"@type": "Question", "name": "복사한 걸 기억하나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 검색되는 클립보드 기록과 즐겨찾기. 스페이스로 미리 보고, 있던 곳으로 다시 붙여넣어요."}}, {"@type": "Question", "name": "같은 상자에서 또 뭘 할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "단위 변환, 이름으로 이모지, 빠른 웹 검색, 그리고 내 셸 별칭. 단축키 하나로, 아무것도 안 띄우고."}}]}]}</script>
 <style>
@@ -42,6 +42,9 @@
   .grain{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.5'/></svg>");background-size:160px;mix-blend-mode:multiply;opacity:.05}
   .rule::before{content:"";display:inline-block;width:26px;height:1px;background:#1721284d;vertical-align:middle;margin-right:12px}
   .shadow-print{box-shadow:0 1px 2px rgba(20,30,24,.06),0 30px 60px -28px rgba(20,30,24,.42)}
+  .hero-bg{position:relative;background-image:linear-gradient(180deg,rgba(3,12,10,.18),rgba(3,12,10,.50)),url("/coco-hero-illustration.webp");background-position:center;background-size:cover}
+  .hero-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(3,12,10,.16),rgba(3,12,10,.56) 86%);pointer-events:none}
+  .hero-bg .rule::before{background:rgba(251,249,242,.58)}
   .prose p{margin-top:1rem;color:#5c6b60;font-size:16px;line-height:1.75}
   .prose p:first-child{margin-top:0}
   .rise{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
@@ -73,19 +76,20 @@ tailwind.config={theme:{extend:{
     <a href="/Coco-macos.dmg" download class="rounded-full bg-pond px-4 py-2 text-[13.5px] font-medium text-paper2 shadow-sm transition will-change-transform hover:-translate-y-px hover:bg-pondhi active:translate-y-0">다운로드</a>
   </nav>
 </header>
-<main class="mx-auto max-w-site px-6">
-  <section class="pt-24 pb-12 text-center sm:pt-32">
-    <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">네이티브 macOS 런처</p>
-    <h1 class="mx-auto mt-7 max-w-4xl font-display text-[clamp(2.6rem,6.6vw,5rem)] font-semibold leading-[1.04] tracking-[-.025em] text-ink">단축키 하나로,<br>모든 것이 손안에.</h1>
-    <p class="mx-auto mt-6 max-w-[34rem] text-[17px] leading-relaxed text-sub">평소엔 메뉴 막대에서 조용히 대기합니다. ⌥Space를 누르면 거기에: 앱 실행, 클립보드 기록, 계산, 환율 변환, 이모지가 한곳에.</p>
+<main>
+  <section class="hero-bg min-h-[calc(100svh-76px)] text-center text-paper2">
+    <div class="relative z-10 mx-auto flex min-h-[calc(100svh-76px)] max-w-site flex-col items-center justify-center px-6 py-20 sm:py-24">
+    <p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-paper2/70">네이티브 macOS 런처</p>
+    <h1 class="mx-auto mt-7 max-w-4xl font-display text-[clamp(2.8rem,7vw,5.4rem)] font-semibold leading-[1.04] tracking-[-.025em] text-paper2">단축키 하나로,<br>모든 것이 손안에.</h1>
+    <p class="mx-auto mt-6 max-w-[34rem] text-[17px] leading-relaxed text-paper2/75">평소엔 메뉴 막대에서 조용히 대기합니다. ⌥Space를 누르면 거기에: 앱 실행, 클립보드 기록, 계산, 환율 변환, 이모지가 한곳에.</p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
-      <a href="/Coco-macos.dmg" download class="rounded-full bg-pond px-7 py-3.5 text-[15px] font-medium text-paper2 shadow-print transition will-change-transform hover:-translate-y-0.5 hover:bg-pondhi active:translate-y-0">⬇  macOS용 다운로드</a>
-      <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="group inline-flex items-center gap-1.5 text-[15px] font-medium text-ink/70 transition-colors hover:text-ink">GitHub에서 보기<span class="transition-transform group-hover:translate-x-0.5">→</span></a>
+      <a href="/Coco-macos.dmg" download class="rounded-full bg-paper2 px-7 py-3.5 text-[15px] font-medium text-pond shadow-print transition will-change-transform hover:-translate-y-0.5 hover:bg-white active:translate-y-0">⬇  macOS용 다운로드</a>
+      <a href="https://github.com/butterflydream-ai/coco-app" rel="noopener" class="group inline-flex items-center gap-1.5 text-[15px] font-medium text-paper2/75 transition-colors hover:text-paper2">GitHub에서 보기<span class="transition-transform group-hover:translate-x-0.5">→</span></a>
     </div>
-    <p class="mt-5 text-[13px] text-ink/40"><span class="font-medium text-ink/60">무료</span> · macOS 14+ · Apple 실리콘 · 약 2 MB · 알아서 최신 유지</p>
-    <div class="mx-auto mt-16 max-w-4xl"><div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10"><img src="/shot-launcher.webp" width="1600" height="1000" fetchpriority="high" alt="The Coco launcher panel open over a macOS desktop" class="w-full rounded-xl ring-1 ring-ink/10"></div></div>
+    <p class="mt-5 text-[13px] text-paper2/55"><span class="font-medium text-paper2/80">무료</span> · macOS 14+ · Apple 실리콘 · 약 2 MB · 알아서 최신 유지</p>
+    </div>
   </section>
-  <section id="features" class="scroll-mt-20 border-t border-line py-24">
+  <section id="features" class="mx-auto max-w-site scroll-mt-20 border-t border-line px-6 py-24">
     <div class="max-w-xl"><p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">하는 일</p>
     <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">작은 창 하나가 꽤 많은 일을</h2>
     <p class="mt-4 text-[16px] leading-relaxed text-sub">Electron 없음. 네이티브 Swift + AppKit, 약 2메가, 누르면 바로 열립니다.</p></div>
@@ -160,7 +164,7 @@ tailwind.config={theme:{extend:{
     </div>
     </div>
   </section>
-  <section class="border-t border-line py-24">
+  <section class="mx-auto max-w-site border-t border-line px-6 py-24">
     <div class="max-w-xl"><p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">실제 동작</p>
     <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">다 치기 전에 답이 나와요</h2></div>
     <div class="mt-14 grid grid-cols-1 gap-7 md:grid-cols-2">
@@ -168,7 +172,7 @@ tailwind.config={theme:{extend:{
       <figure class="m-0"><div class="rounded-2xl bg-card p-2.5 shadow-print ring-1 ring-ink/10"><img src="/shot-calc.webp" width="1600" height="1000" loading="lazy" alt="결과 테이프가 있는 Coco 계산기" class="w-full rounded-xl ring-1 ring-ink/10"></div><figcaption class="mt-4 text-[14.5px] text-sub"><b class="font-display font-semibold text-ink">진짜 테이프.</b> 답이 사라지지 않고 남아 바로 다시 써요——한 번이 아니라.</figcaption></figure>
     </div>
   </section>
-  <section id="faq" class="scroll-mt-20 border-t border-line py-24">
+  <section id="faq" class="mx-auto max-w-site scroll-mt-20 border-t border-line px-6 py-24">
     <div class="grid gap-x-16 gap-y-10 md:grid-cols-[20rem_1fr]">
       <div><p class="rule text-[12px] font-medium uppercase tracking-[.2em] text-ink/45">알아두면</p>
       <h2 class="mt-5 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-semibold tracking-[-.02em]">자주 묻는 질문</h2></div>
